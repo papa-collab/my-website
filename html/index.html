@@ -14,7 +14,11 @@
     <title>Shopists</title>
 </head>
 <body>
-
+<script>
+if (!localStorage.getItem('loggedInUser')) {
+    document.body.innerHTML = '<p>Please <a href="login.html">login</a> to access.</p>';
+}
+</script>
     <div class="navbar-container">
         <nav class="navbar"> 
             <div class="sidenav-toggler bars">
