@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../font-awesome/all.css">
 </head>
 <body>
+    <script>
+if (!localStorage.getItem('loggedInUser')) {
+    document.body.innerHTML = '<p>Please <a href="login.html">login</a> to access.</p>';
+}
+</script>
 
     <!-- navbar -->
 
