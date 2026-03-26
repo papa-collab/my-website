@@ -14,6 +14,12 @@
     <title>Shopists</title>
 </head>
 <body>
+    <script>
+if (!localStorage.getItem('loggedInUser')) {
+    document.body.innerHTML = '<div style="text-align:center;padding:50px;"><p>Please <a href="login.html">login</a> to continue.</p></div>';
+    document.body.style.background = '#f4f4f4';
+}
+</script>
 
     <div class="navbar-container">
         <nav class="navbar"> 
