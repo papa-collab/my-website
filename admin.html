@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | My Website</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; text-align: center; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .logout { background: #dc3545; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; float: right; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #dee2e6; }
+        th { background: #f8f9fa; font-weight: 600; }
+        .secure { color: #28a745; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Dashboard 🔒</h1>
+        <p class="secure">Secure HTTPS Session Active</p>
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+    <div class="container">
+        <h2>Recent Orders</h2>
+        <table>
+            <thead><tr><th>ID</th><th>User</th><th>Item</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td>#001</td><td>user@example.com</td><td>Laptop</td><td>KSh 50,000</td><td>Shipped</td></tr>
+                <tr><td>#002</td><td>user@example.com</td><td>Phone</td><td>KSh 25,000</td><td>Pending</td></tr>
+            </tbody>
+        </table>
+        <h2>Users</h2>
+        <table>
+            <thead><tr><th>Email</th><th>Role</th><th>Last Login</th></tr></thead>
+            <tbody>
+                <tr><td>user@example.com</td><td>User</td><td>2026-03-26</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        if (localStorage.getItem('loggedInUser') !== 'admin@example.com') location.href = 'login.html';
+        function logout() { localStorage.removeItem('loggedInUser'); location.href = 'login.html'; }
+    </script>
+</body>
+</html>
